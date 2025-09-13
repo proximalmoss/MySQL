@@ -52,7 +52,7 @@ select*from designation;
 #sql query to retreive all details where first name from employee table which starts with 'H'
 select * from Employee where first_name like "H%";
 #sql query to print all details of the employees whose salary between 10000 35000 fetch employee name
-select * from Employee where salary between 10000 and 55000;
+select * from Employee where salary between 10000 and 35000;
 #(inner query-what if first name and last name needs to be combined)
 select concat(first_name,' ',last_name) as employee_name,salary from Employee where empid in
 (select empid from Employee where salary between 10000 and 55000);

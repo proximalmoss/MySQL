@@ -1,13 +1,20 @@
+#JOINS
 use customers;
-select @record as Totalrecords;
-call get_student_info(@record,30);
-call get_student_info(30);
-get_student_info(30);
-select*from student;
+select * from department;
+select * from student;
+#inner join
 select student.first_name, student.last_name, department.department_name
-from student natural join department;
+from student inner join department on 
+student.student_id=departmen.student_id;
+#left join
 select student.first_name, student.last_name, department.department_name
-from student cross join department;
+from student left join department on 
+student.student_id=department.student_id;
+#right join
+select student.first_name, student.last_name, department.department_name
+from student right join department on 
+student.student_id=department.student_id;
+#full outer join
 select student.first_name, student.last_name, department.department_name
 from student left join department on 
 student.student_id=department.student_id
@@ -15,25 +22,13 @@ union
 select student.first_name, student.last_name, department.department_name
 from student right join department on 
 student.student_id=department.student_id;
+#cross join (gives all possible combinations)
 select student.first_name, student.last_name, department.department_name
-from student right join department on 
-student.student_id=department.student_id;
+from student cross join department;
+#natural join(gives table based on columns with same name or dtypes)
 select student.first_name, student.last_name, department.department_name
-from student left join department on 
-student.student_id=department.student_id;
-select student.first_name, student.last_name, department.department_name
-from student inner join department on 
-student.student_id=department.student_id;
-select * from department;
-select student.first_name, student.last_name, department.department_name
-from student inner join department on 
-student.student_id=departmen.student_id;
-select * from department;
-select * from student;
-insert into student values (4,'Ethan','Payne',30),
-(5,'George','Clarky',25);
-select * from student;
-select * from department;
-select * from student;
-use customers;
-use customer;
+from student natural join department;
+#stored procedures
+call get_student_info(30);
+select @record as Totalrecords;
+call get_student_info(@record,30);

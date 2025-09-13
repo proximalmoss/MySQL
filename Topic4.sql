@@ -5,7 +5,7 @@ select * from student;
 #inner join
 select student.first_name, student.last_name, department.department_name
 from student inner join department on 
-student.student_id=departmen.student_id;
+student.student_id=department.student_id;
 #left join
 select student.first_name, student.last_name, department.department_name
 from student left join department on 

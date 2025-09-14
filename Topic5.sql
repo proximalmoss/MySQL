@@ -56,7 +56,7 @@ select * from Employee where salary between 10000 and 35000;
 #(inner query-what if first name and last name needs to be combined)
 select concat(first_name,' ',last_name) as employee_name,salary from Employee where empid in
 (select empid from Employee where salary between 10000 and 55000);
-#sql query to retreive details of the employees who have joined ona specific date
+#sql query to retreive details of the employees who have joined on a specific date
 #dec 2014
 select * from Employee where year(joining_date)=2014 and month(joining_date)=12;
 #sql query to fetch number of employees in every department
@@ -75,6 +75,6 @@ desc clone_employee;
 select * from Employee order by salary desc limit 4;
 #sql query to determine the 4th highest salary
 select salary from Employee order by salary desc limit 3,1;#n-1,1
-#sql query to determine 6th highest salary without using limit
+#sql query to determine 4th highest salary without using limit
 select salary from Employee e1 where 3=(select count(distinct salary) from
 Employee e2 where e2.salary>e1.salary);
